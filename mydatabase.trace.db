@@ -1,0 +1,4 @@
+2022-05-24 19:46:24 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE IF [*]EXISTS products (id int PRIMARY KEY, title VARCHAR(255), coast int)"; ожидалось "NOT"
+Syntax error in SQL statement "CREATE TABLE IF [*]EXISTS products (id int PRIMARY KEY, title VARCHAR(255), coast int)"; expected "NOT"; SQL statement:
+CREATE TABLE IF EXISTS products (id int PRIMARY KEY, title VARCHAR(255), coast int) [42001-212]
