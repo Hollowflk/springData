@@ -1,6 +1,6 @@
 package com.geekbrains.springData.Service;
 
-import com.geekbrains.springData.DAO.ProductDAO;
+import com.geekbrains.springData.Repository.ProductRepository;
 import com.geekbrains.springData.Model.Product;
 import org.springframework.stereotype.Service;
 
@@ -9,25 +9,25 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    private ProductDAO productDAO;
+    private ProductRepository productRepository;
 
-    public ProductService(ProductDAO productDAO){
-        this.productDAO = productDAO;
+    public ProductService(ProductRepository productRepository){
+        this.productRepository = productRepository;
     }
 
     public Product getById(Integer id){
-        return productDAO.findById(id).orElseThrow();
+        return productRepository.findById(id).orElseThrow();
     }
 
     public List<Product> getAllProduct(){
-        return productDAO.findAll();
+        return productRepository.findAll();
     }
 
     public void createNewProduct(String title, Integer coast){
-        productDAO.save(new Product(title,coast));
+        productRepository.save(new Product(title,coast));
     }
 
     public void deleteById(Integer id){
-        productDAO.deleteById(id);
+        productRepository.deleteById(id);
     }
 }
